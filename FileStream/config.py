@@ -28,13 +28,13 @@ class Telegram:
 
 class Server:
     PORT = int(env.get("PORT", 8080))
-    BIND_ADDRESS = str(env.get("BIND_ADDRESS", "https://bold-locket-bitter-slave-production.pipeops.app"))
-    PING_INTERVAL = int(env.get("PING_INTERVAL", "120"))
-    HAS_SSL = str(env.get("HAS_SSL", "True"))
-    NO_PORT = str(env.get("NO_PORT", "False"))
+    BIND_ADDRESS = str(env.get("BIND_ADDRESS", "bold-locket-bitter-slave-production.pipeops.app"))
+    PING_INTERVAL = int(env.get("PING_INTERVAL", "1200"))
+    HAS_SSL = str(env.get("HAS_SSL", "0").lower()) in ("1", "true", "t", "yes", "y")
+    NO_PORT = str(env.get("NO_PORT", "0").lower()) in ("1", "true", "t", "yes", "y")
     FQDN = str(env.get("FQDN", BIND_ADDRESS))
     URL = "http{}://{}{}/".format(
-        "s" if HAS_SSL else "", FQDN, ""
+        "s" if HAS_SSL else "", FQDN, "" if NO_PORT else ":" + str(PORT)
     )
 
 
