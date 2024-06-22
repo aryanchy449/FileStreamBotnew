@@ -7,7 +7,7 @@ class Telegram:
     API_ID = int(env.get("API_ID","23080322"))
     API_HASH = str(env.get("API_HASH","b3611c291bf82d917637d61e4a136535"))
     BOT_TOKEN = str(env.get("BOT_TOKEN","6613620736:AAHUWQIPnyn6YRd-zkPzAMsbxs0MogZoI0o"))
-    OWNER_ID = int(env.get('OWNER_ID', '7978482443'))
+    OWNER_ID = int(env.get('OWNER_ID', '6214889840'))
     WORKERS = int(env.get("WORKERS", "6"))  # 6 workers = 6 commands at once
     DATABASE_URL = str(env.get("DATABASE_URL","mongodb+srv://chaunisha765:hello@cluster0.v0tm2yj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"))
     UPDATES_CHANNEL = str(env.get("UPDATES_CHANNEL", "-1002111184944")
